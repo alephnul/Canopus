@@ -1,2 +1,3 @@
 # Canopus
-GAI NN for learning purposes
+
+small NN-project
