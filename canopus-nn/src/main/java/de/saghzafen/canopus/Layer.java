@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Layer{
 
-    private ArrayList<Node> nodes;
+    private ArrayList<Node> nodes = new ArrayList<Node>();
 
     Layer (int size) {
         initNodes(size);
@@ -17,6 +17,13 @@ public class Layer{
 
     public ArrayList<Node> getNodes() {
         return nodes;
+    }
+
+    public void setNodes(ArrayList<Node> nodes) throws Exception {
+        if (this.nodes.size() != nodes.size()) {
+            throw new Exception("Size mismatch. Expected size " + this.nodes.size() + " but got " + nodes.size());
+        }
+        this.nodes = nodes;
     }
 
     public int size(){

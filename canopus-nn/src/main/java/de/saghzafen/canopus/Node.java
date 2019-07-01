@@ -5,11 +5,18 @@ package de.saghzafen.canopus;
  */
 public class Node {
 
-    float value;
-    Layer nextLayer;
+    private float value;
+    private float weight;
 
-    Node(float value) {
+    private Layer previousLayer;
+
+    Node(float value, float weight) {
         this.value = value;
+        this.weight = weight;
+    }
+
+    Node(float weight) {
+        this.value = weight;
     }
 
     public float activate() {
@@ -22,8 +29,27 @@ public class Node {
         return value;
     }
 
-    public void setNextLayer(Layer nextLayer) {
-        this.nextLayer = nextLayer;
+    public void setValue(float value){
+        this.value = value;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
+    public void setpreviousLayer(Layer previousLayer) {
+        this.previousLayer = previousLayer;
+    }
+
+    public float getValue() {
+        return this.value;
     }
     
+    public float getWeight() {
+        return this.weight;
+    }
+
+    public Layer getPreviousLayer() {
+        return this.previousLayer;
+    }
 }
